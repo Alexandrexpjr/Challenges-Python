@@ -44,3 +44,4 @@ def get_longest_chain(max_number):
 
 print(get_longest_chain(1000000)) # 837799 
 # Correct
+
