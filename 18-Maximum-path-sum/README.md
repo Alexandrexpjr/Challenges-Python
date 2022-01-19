@@ -1,38 +1,39 @@
-<style>
-  img[alt$=">"] {
-    float: right;
-  }
+<!-- <style>
+    img[alt$=">"] {
+      float: right;
+    }
 
-  img[alt$="<"] {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
+    img[alt$="<"] {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
 
-  img[alt$="><"] {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    float: none!important;
-  }
-  /* This way of work with images in MD, i have found at
-  https://stackoverflow.com/questions/255170/markdown-and-image-alignment */
+    img[alt$="><"] {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+      float: none!important;
+    }
+    /* This way of work with images in MD, i have found at
+    https://stackoverflow.com/questions/255170/markdown-and-image-alignment */
 
-  .red {
-    color: red;
-  }
-  .yellow {
-    color: yellow;
-  }
-  .green {
-    color: green;
-  }
-  .all-content {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
+    .red {
+      color: red;
+    }
+    .yellow {
+      color: yellow;
+    }
+    .green {
+      color: green;
+    }
+    .all-content {
+      display: flex;
+      flex-direction: column;
+    }
+IT DOESN'T WORK ON GITHUB, SO I COMMENT THIS
+</style> -->
 
 # Challenge 18: Maximum path sum
 
