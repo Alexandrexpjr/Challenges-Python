@@ -13,16 +13,16 @@ def toString(List):
 # 2. Starting index of the string
 # 3. Ending index of the string.
 # 4. List to be filled
-def permute(a, l, r, f):
-    if l==r:
-        f.append(toString(a))
-    else:
-        for i in range(l,r+1):
-            a[l], a[i] = a[i], a[l]
-            permute(a, l+1, r, f)
-            a[l], a[i] = a[i], a[l] # backtrack
+def permute(string, initial_index, last_index, perms):
+  if initial_index == last_index:
+    perms.append(toString(string))
+  else:
+    for i in range(initial_index,last_index+1):
+      string[initial_index], string[i] = string[i], string[initial_index]
+      permute(a, initial_index+1, last_index, perms)
+      string[initial_index], string[i] = string[i], string[initial_index] # backtrack
 
-def teste(a, n):
+def get_perms(a, n):
   perms = []
   permute(a, 0, n-1, perms)
   return perms
@@ -41,7 +41,7 @@ string = "0123456789"
 n = len(string)
 a = list(string)
 
-permutations = teste(a, n)
+permutations = get_perms(a, n)
 sorted = sortPerms(permutations)
 print(get_nth_perm(sorted, 1000000)) # 2783915460
 
