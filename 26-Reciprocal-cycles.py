@@ -14,41 +14,31 @@ Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be see
 Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 """
 
-def get_longest_recurring_cycle(d):
-  sequenceLength = 0
-  for i in range(d, 0, -1):
-    if (sequenceLength >= i):
-      break
-    foundRemainders = []
-    value = 1
-    while(value != 0 or len(foundRemainders) == 100):
-      value *= 10
-      value %= i
-      foundRemainders.append(value)
-    print(foundRemainders)
-get_longest_recurring_cycle(100)
-
-
-def get_cycle(number):
-  pass
-
-sequenceLength = 0
- 
-for i in range(1000, 0, -1):
-  if (sequenceLength >= i):
-    break
-  foundRemainders = []
+def check_n_recurring_cycle(n):
+  n_set = set()
+  current_cycle_size = 0
   value = 1
-  position = 0
-
-  while (foundRemainders[value] == 0 and value != 0):
-    foundRemainders[value] = position
+  while(value != 0 ):
     value *= 10
-    value %= i
-    position += 1
+    value %= n
+    if value in n_set:
+      break
+    else: 
+      current_cycle_size += 1
+      n_set.add(value)
+  return { 'number': n, 'size': current_cycle_size }
 
+def find_longest_recurring_cycle_under_d(d):
+  number_with_longest_cycle = 0
+  cycle = 0
+  for number in range(d, 0, -1):
+    if (cycle >= number): break
+    get_cycle = check_n_recurring_cycle(number)
+    if(get_cycle['size'] > cycle):
+      cycle = get_cycle['size']
+      number_with_longest_cycle = number
+  return print(f'The number {number_with_longest_cycle} has the longest recurring cycle, which is {cycle}')
 
-  if (position - foundRemainders[value] > sequenceLength):
-    sequenceLength = position - foundRemainders[value]
+find_longest_recurring_cycle_under_d(1000) # The number 983 has the longest recurring cycle, which is 982
 
-print(sequenceLength)
+# Correct
