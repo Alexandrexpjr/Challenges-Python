@@ -1,3 +1,7 @@
+import os
+
+os.chdir('./22-Names-scores/')
+
 f = open("p022_names.txt", "r")
 
 all_names = f.read()
